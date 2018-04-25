@@ -1,0 +1,41 @@
+
+plugins {
+    id 'org.jetbrains.intellij' version '0.3.1'
+}
+
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'org.jetbrains.intellij'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+apply from: "gradle.properties"
+
+intellij {
+    version '2018.1.1'
+    plugins 'coverage'
+    pluginName 'plugin_name_goes_here'
+//    intellij.updateSinceUntilBuild false //Disables updating since-build attribute in plugin.xml
+
+    publish {
+        pluginId 'com.jetbrains.smali'
+        // (optional) apply from: "YOUR_CUSTOM_PROPERTIES_FILE.properties"
+    }
+}
+
+group 'com.jetbrains'
+version '1.0-SNAPSHOT'
+
+//patchPluginXml {
+//    changeNotes """
+//      Add change notes here.<br>
+//      <em>most HTML tags may be used</em>"""
+//}

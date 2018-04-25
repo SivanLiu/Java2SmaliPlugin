@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.jetbrains.java2smali</id>
+    <name>JavaSmali</name>
+    <vendor email="468088615@qq.com" url="http://sivanliu.github.io">SivanLiu</vendor>
+
+    <description>
+        [CDATA[
+        Java2Smali is a plugin for Android studio and Intelliji idea converting java to smali
+        ]]
+    </description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="com.jetbrains.smali" text="Greeting" description="Greeting menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
+        </group>
+    </actions>
+</idea-plugin>
